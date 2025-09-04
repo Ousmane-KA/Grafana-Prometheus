@@ -24,7 +24,8 @@
 
 ## PLAN DE MISE EN PLACE
 
-![image](attachment:43096923-d5b0-4e4a-823a-5ae8b462707d\:image.png)
+<img width="1400" height="1150" alt="image" src="https://github.com/user-attachments/assets/41e7c407-8e94-40da-a081-656bfdd08d9c" />
+
 
 ---
 
@@ -64,6 +65,9 @@ cd GRAFANA-PROMETHEUS
 sudo chown -R 472:472 grafana
 sudo chown -R 65534:65534 prometheus
 ```
+
+<img width="1204" height="408" alt="image" src="https://github.com/user-attachments/assets/fae5f811-a1c1-4b4c-956f-2a97a6fdb8e2" />
+
 
 ---
 
@@ -129,13 +133,18 @@ scrape_configs:
 ```bash
 docker-compose up -d
 ```
+<img width="1390" height="759" alt="image" src="https://github.com/user-attachments/assets/a2d7e086-10e8-4e95-b8ac-c0397723b40b" />
+
+
 
 ---
 
 ### 7) Interfaces
 
-* **Prometheus** : [http://localhost:9090](http://localhost:9090)
-* **Grafana** : [http://localhost:3000](http://localhost:3000)
+* **Prometheus** : <img width="1832" height="432" alt="image" src="https://github.com/user-attachments/assets/649748de-ea87-4828-a693-793ca1fc07b0" />
+
+* **Grafana** : <img width="1824" height="529" alt="image" src="https://github.com/user-attachments/assets/54c97e67-f918-4a72-8799-c409a23d1205" />
+
 
   * **Login** par défaut : `admin / admin`
 
@@ -149,6 +158,9 @@ docker-compose up -d
 
 > Naviguez dans Grafana → `Settings` → `Data Sources` → `Add data source` → Prometheus
 > La connexion doit être validée automatiquement.
+
+<img width="1629" height="725" alt="image" src="https://github.com/user-attachments/assets/b2b422b7-20ed-409d-9865-9f1dae853ed7" />
+
 
 ---
 
@@ -166,76 +178,16 @@ docker-compose up -d
 avg without(cpu) (irate(node_cpu_seconds_total{mode!="idle"}[1m]))
 ```
 
-* **Description** : Affiche l’utilisation active du CPU (hors idle)
+<img width="1447" height="758" alt="image" src="https://github.com/user-attachments/assets/f9a7f741-4b45-41c1-8f20-9b40033f375f" />
 
----
 
-### Panel 2 : Memory Usage
-
-* **PromQL** :
-
-```promql
-node_memory_MemTotal_bytes 
-- node_memory_MemFree_bytes 
-- node_memory_Cached_bytes 
-- node_memory_Buffers_bytes
-```
-
-* **Autres métriques** :
-
-  * `node_memory_Cached_bytes`
-  * `node_memory_Buffers_bytes`
-  * `node_memory_MemFree_bytes`
-
-* **Description** : Utilisation mémoire par type (Used, Buffers, Cached, Free)
-
----
-
-### Panel 3 : Disk Usage (Used)
-
-```promql
-node_filesystem_size_bytes - node_filesystem_avail_bytes
-```
-
-> Filtrage des volumes : exclusion des loop, tmpfs, nsfs, etc.
-
----
-
-### Panel 4 : Disk Available
-
-```promql
-node_filesystem_avail_bytes
-```
-
-> Visualisation de l’espace disque libre par partition
-
----
-
-### Panel 5 : Network Traffic
-
-* **Receive** :
-
-```promql
-irate(node_network_receive_bytes_total[5m])
-```
-
-* **Transmit** :
-
-```promql
-irate(node_network_transmit_bytes_total[5m])
-```
-
-> 📶 Suivi du trafic réseau entrant/sortant par interface
-
----
-
-## 🧾 CONCLUSION
+## CONCLUSION
 
 Cette solution permet une **supervision en temps réel** d’un hôte Linux, avec :
 
-✅ Des **alertes personnalisées**
-✅ Une **interface web intuitive**
-✅ Un **déploiement rapide via Docker**
+> Des **alertes personnalisées**
+> Une **interface web intuitive**
+> Un **déploiement rapide via Docker**
 
 ---
 
