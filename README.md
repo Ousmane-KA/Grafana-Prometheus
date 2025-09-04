@@ -178,7 +178,8 @@ docker-compose up -d
 avg without(cpu) (irate(node_cpu_seconds_total{mode!="idle"}[1m]))
 ```
 
-<img width="1447" height="758" alt="image" src="https://github.com/user-attachments/assets/f9a7f741-4b45-41c1-8f20-9b40033f375f" />
+<img width="849" height="251" alt="image" src="https://github.com/user-attachments/assets/e383db9a-70a9-434c-b9f5-42b566287f35" />
+
 
 
 ## CONCLUSION
@@ -189,7 +190,7 @@ Des **alertes personnalisées**
 ---
 Une **interface web intuitive**
 ---
-> Un **déploiement rapide via Docker**
+Un **déploiement rapide via Docker**
 
 ---
 
