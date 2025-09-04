@@ -29,7 +29,7 @@
 
 ---
 
-## 🅲 INSTALLATION ET CONFIGURATION DE LA STACK
+## INSTALLATION ET CONFIGURATION DE LA STACK
 
 ### 1) Spécifications de la machine
 
@@ -185,8 +185,10 @@ avg without(cpu) (irate(node_cpu_seconds_total{mode!="idle"}[1m]))
 
 Cette solution permet une **supervision en temps réel** d’un hôte Linux, avec :
 
-> Des **alertes personnalisées**
-> Une **interface web intuitive**
+Des **alertes personnalisées**
+---
+Une **interface web intuitive**
+---
 > Un **déploiement rapide via Docker**
 
 ---
